@@ -13,7 +13,12 @@ function App() {
         axios
           .post(
             "http://localhost:8080/api/login-google",
-            credentialResponse.credential
+            { crenditial: credentialResponse.credential },
+            {
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
           )
           .then((response) => {
             console.log("this is jwt from be: " + response);
