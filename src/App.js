@@ -21,7 +21,7 @@ function App() {
             }
           )
           .then((response) => {
-            console.log("this is jwt from be: " + response);
+            localStorage.setItem("jwt", JSON.stringify(response.data));
           });
       }}
       onError={() => {
